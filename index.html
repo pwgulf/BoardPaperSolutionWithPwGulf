@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -15,7 +16,8 @@
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+        rel="stylesheet">
 
     <!-- Vendor CSS-->
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
@@ -25,27 +27,120 @@
     <!-- Main CSS-->
     <link href="css/main.min.css" rel="stylesheet" media="all">
 </head>
+
 <body>
     <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <img src="//coderverse.com/wp-content/uploads/2019/11/coderverse-1.png" class="mx-auto d-block img-size-2 img-fluid" alt="">
+                    <img src="//coderverse.com/wp-content/uploads/2019/11/coderverse-1.png"
+                        class="mx-auto d-block img-size-2 img-fluid" alt="">
                     <h2 class="title">Register to Get Detailed Video Solution From Master Teacher of Board Papers </h2>
                 </div>
                 <div class="card-body">
                     <form method="POST" autocomplete="off" name="google-sheet">
-                        <!-- Form content remains the same -->
+                        <div class="form-row">
+                            <div class="name">Full Name </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input required class="input--style-5" type="text" name="Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Phone 1 & 2</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="Student Number">
+                                            <label class="label--desc">1st Phone</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="Parent Number">
+                                            <label class="label--desc">2nd Phone</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Email</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" required type="email" name="Email">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="form-row m-b-55">
+                            <div class="name">Phone</div>
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="area_code">
+                                            <label class="label--desc">Area Code</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="phone">
+                                            <label class="label--desc">Phone Number</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="form-row">
+                            <div class="name">Subject</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="Subject">
+                                            <option disabled="disabled" selected>Choose an option</option>
+                                            <option value="Math">Math</option>
+                                            <option value="Science">Science</option>
+                                            <option value="English">English</option>
+                                            <option value="SST">SST
+                                            </option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Any Specific Demand ? </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <textarea class="input--style-5" id="" cols="49" name="Address" rows="2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row p-t-20">
+                            <label class="label label--block">Are you an existing Student of PhysicsWallah Gulf?</label>
+                            <div class="p-t-15">
+                                <label class="radio-container m-r-55">Yes
+                                    <input value="yes" type="radio" checked="checked" name="exist">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">No
+                                    <input value="No" type="radio" name="exist">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn--radius-2 btn--red" type="submit" name="submit">Register Now</button>
+                            <p class="loading" > <i class="fas fa-info-circle"></i> After Click on <em class="emgreen" >Register Now</em> Wait for Registration Confirmation Notification</p>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Video element -->
-    <video id="successVideo" style="display:none;width:100%;" controls>
-        <source src="https://dysg3c97clm9i.cloudfront.net/a697b471-30d3-43fc-a249-6568248e73be/mp4_muxing/a697b471-30d3-43fc-a249-6568248e73be_720p.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
 
     <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -63,28 +158,24 @@
         $(document).ready(function () {
             $('.js-example-basic-multiple').select2();
         });
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzKX69bbLg0pxuih9AzILPd2ZK_pjpgPUYhnU12N_m3S68cZGtH-PT9Qlue58ASnzpfmw/exec';
-        const form = document.forms['google-sheet'];
-        const video = document.getElementById('successVideo');
-
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbzKX69bbLg0pxuih9AzILPd2ZK_pjpgPUYhnU12N_m3S68cZGtH-PT9Qlue58ASnzpfmw/exec'
+        const form = document.forms['google-sheet']
         form.addEventListener('submit', e => {
-            e.preventDefault();
+            e.preventDefault()
             fetch(scriptURL, {
-                method: 'POST',
-                body: new FormData(form)
-            })
-            .then(response => Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Registration Successful',
-                showConfirmButton: false,
-                timer: 2000
-            }).then((result) => {
-                video.style.display = 'block';
-                video.play();
-            }))
-            .catch(error => console.error('Error!', error.message))
-        });
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Registration Successful',
+                    showConfirmButton: false,
+                    timer: 2000
+                }))
+                .catch(error => console.error('Error!', error.message))
+        })
     </script>
 </body>
 </html>
