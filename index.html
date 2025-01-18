@@ -154,28 +154,32 @@
 
     <!-- Main JS-->
     <script src="js/global.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.js-example-basic-multiple').select2();
-        });
-        const scriptURL =
-            'https://script.google.com/macros/s/AKfycbzKX69bbLg0pxuih9AzILPd2ZK_pjpgPUYhnU12N_m3S68cZGtH-PT9Qlue58ASnzpfmw/exec'
-        const form = document.forms['google-sheet']
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, {
-                    method: 'POST',
-                    body: new FormData(form)
-                })
-                .then(response => Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: 'Registration Successful',
-                    showConfirmButton: false,
-                    timer: 2000
-                }))
-                .catch(error => console.error('Error!', error.message))
+<script>
+    $(document).ready(function () {
+        $('.js-example-basic-multiple').select2();
+    });
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzKX69bbLg0pxuih9AzILPd2ZK_pjpgPUYhnU12N_m3S68cZGtH-PT9Qlue58ASnzpfmw/exec';
+    const form = document.forms['google-sheet'];
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, {
+            method: 'POST',
+            body: new FormData(form)
         })
-    </script>
+        .then(response => Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Registration Successful',
+            showConfirmButton: false,
+            timer: 2000
+        }).then((result) => {
+            if (result.dismiss === Swal.DismissReason.timer) {
+                window.location.href = 'video-player.html'; // Redirects to the video player page
+            }
+        }))
+        .catch(error => console.error('Error!', error.message));
+    });
+</script>
+
 </body>
 </html>
