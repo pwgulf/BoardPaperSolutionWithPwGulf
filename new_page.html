@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class Selection</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+  .banner { 
+    width: 100%; 
+    height: 150px; 
+    background: url('https://www.pwgulf.com/_next/static/media/pw-gulf-logo.00277f9d.svg') no-repeat center center; 
+    background-size: cover; 
+    color: blue; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  .class-box { 
+    width: calc(100% - 40px);
+    margin: 10px;
+    background: #07182E;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .class-title {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .subjects {
+    display: flex;
+    justify-content: space-between;
+  }
+  .subject {
+    width: 48%;
+    background: #00B4D8;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+  }
+  .download-button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: #0077B6;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+</style>
+</head>
+<body>
+<div class="banner">
+  <!-- Banner can have additional content here -->
+</div>
+<div class="container">Ace Your Exam with PWGulf Master Teacher Suggested Best Content  Before Exam </div>
+<div class="container">
+  <!-- Example for Class 8 -->
+  <div class="class-box">
+    <div class="class-title">Class 8</div>
+    <div class="subjects">
+      <div class="subject"><a href="path_to_math_pdf">Mind Map and Short Notes Math</a></div>
+      <div class="subject"><a href="path_to_physics_pdf">Mind Map and Short Notes Physics</a></div>
+    </div>
+    <button class="download-button"><a href="path_to_download_all_class8">Download All</a></button>
+  </div>
+  <!-- Additional classes can be similarly structured -->
+    <!-- Class 9 -->
+  <div class="class-box">
+    <div class="class-title">Class 9</div>
+    <div class="subjects">
+      <div class="subject"><a href="path_to_math_pdf">Mind Map and Short Notes Math</a></div>
+      <div class="subject"><a href="path_to_physics_pdf">Mind Map and Short Notes Physics</a></div>
+    </div>
+    <button class="download-button"><a href="path_to_download_all_class9">Download All</a></button>
+  </div>
+
+  <!-- Class 10 -->
+  <div class="class-box">
+    <div class="class-title">Class 10</div>
+    <div class="subjects">
+      <div class="subject"><a href="path_to_math_pdf">Mind Map and Short Notes Math</a></div>
+      <div class="subject"><a href="path_to_physics_pdf">Mind Map and Short Notes Physics</a></div>
+    </div>
+    <button class="download-button"><a href="path_to_download_all_class10">Download All</a></button>
+  </div>
+
+  <!-- Class 11 -->
+  <div class="class-box">
+    <div class="class-title">Class 11</div>
+    <div class="subjects">
+      <div class="subject"><a href="path_to_math_pdf">Mind Map and Short Notes Math</a></div>
+      <div class="subject"><a href="path_to_physics_pdf">Mind Map and Short Notes Physics</a></div>
+    </div>
+    <button class="download-button"><a href="path_to_download_all_class11">Download All</a></button>
+  </div>
+
+  <!-- Class 12 -->
+  <div class="class-box">
+    <div class="class-title">Class 12</div>
+    <div class="subjects">
+      <div class="subject"><a href="path_to_math_pdf">Mind Map and Short Notes Math</a></div>
+      <div class="subject"><a href="path_to_physics_pdf">Mind Map and Short Notes Physics</a></div>
+    </div>
+    <button class="download-button"><a href="path_to_download_all_class12">Download All</a></button>
+  </div>
+
+</div>
+</body>
+</html>
