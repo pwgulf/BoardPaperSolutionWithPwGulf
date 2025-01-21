@@ -161,26 +161,39 @@
     });
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzKX69bbLg0pxuih9AzILPd2ZK_pjpgPUYhnU12N_m3S68cZGtH-PT9Qlue58ASnzpfmw/exec';
     const form = document.forms['google-sheet'];
+
     form.addEventListener('submit', e => {
         e.preventDefault();
         fetch(scriptURL, {
             method: 'POST',
             body: new FormData(form)
         })
-        .then(response => Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Registration Successful',
-            showConfirmButton: false,
-            timer: 2000
-        }).then((result) => {
-            if (result.dismiss === Swal.DismissReason.timer) {
-                window.location.href = 'newpage.html'; // Redirects to the video player page
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
-        }))
-        .catch(error => console.error('Error!', error.message));
+            return response.text();
+        })
+        .then(result => {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Registration Successful',
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    window.location.href = 'newpage.html'; // Ensure this is the correct path to your page
+                }
+            })
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong! Please try again.'
+            });
+        });
     });
 </script>
-
-</body>
-</html>
