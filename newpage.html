@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Class Selection</title>
-  <script>
+<title>Class Selection - PWGulf</title>
+<script>
   window.onload = function() {
     if (!localStorage.getItem("registered")) {
-      window.location.href = 'index.html';  // Ensure the user is redirected to register if not done so
+      window.location.href = 'index.html';  // Redirect if not registered
     }
   };
 </script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 <style>
 body { 
   font-family: Arial, sans-serif; 
@@ -20,98 +21,124 @@ body {
 }
 .banner { 
   width: 100%; 
-  height: 100px; /* Fixed height */
+  height: 150px; 
   background: url('https://www.pwgulf.com/_next/static/media/pw-gulf-logo.00277f9d.svg') no-repeat center center; 
-  background-size: contain; /* Adjusts the size of the background image to fit within the content box */
-  color: blue; 
+  background-size: contain; 
   display: flex; 
   justify-content: center; 
   align-items: center; 
+  background-color: #0077B6; 
+  animation: pulse 5s infinite;
 }
 
-  .container {
-    max-width: 1200px; /* Max width for large screens */
-    margin: 0 auto; /* Center the container */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+@keyframes pulse {
+  0% { background-color: #0077B6; }
+  50% { background-color: #005a86; }
+  100% { background-color: #0077B6; }
+}
+
+.support-info {
+  text-align: center;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #07182E;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.class-box { 
+  width: calc(50% - 40px);
+  max-width: 500px;
+  margin: 10px;
+  background: #07182E;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.class-title {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.subjects {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subject {
+  width: 48%;
+  background: #00B4D8;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+.download-button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background: #0077B6;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .class-box {
+    width: 100%;
   }
-  .class-box { 
-    width: calc(50% - 40px); /* Responsive width */
-    max-width: 500px; /* Maximum width of boxes */
-    margin: 10px;
-    background: #07182E;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  .class-title {
-    font-size: 24px;
-    color: white;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .subjects {
-    display: flex;
-    justify-content: space-between;
-  }
-  .subject {
-    width: 48%;
-    background: #00B4D8;
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
-    text-align: center;
-  }
-  .download-button {
-    padding: 10px 20px;
-    margin-top: 20px;
-    background: #0077B6;
-    color: white;
-    text-align: center;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  a {
-    text-decoration: none;
-    color: white;
-  }
-  /* Media query for small devices */
-  @media (max-width: 768px) {
-    .class-box {
-      width: 100%; /* Full width on small screens */
-    }
-  }
+}
 </style>
 </head>
 <body>
 <div class="banner">
-  <!-- Banner can have additional content here -->
+  <!-- Adjusted banner size for better visual alignment -->
 </div>
-<div class="container">Ace Your Exam with PWGulf Master Teacher Suggested Best Content  Before Exam </div>
+<div class="support-info">
+  <i class="fas fa-envelope"></i> Email us at <a href="mailto:support@pwgulf.com">support@pwgulf.com</a>
+  <i class="fas fa-phone"></i> Call us at +971 564038046
+</div>
+<div class="container">Ace Your Exam with PWGulf Master Teacher Suggested Best Content Before Exam</div>
 <div class="container">
   <!-- Example for Class 8 -->
   <div class="class-box">
     <div class="class-title">Class 8</div>
     <div class="subjects">
-      <div class="subject"><a href="path_to_math_pdf">Mind Map and Short Notes Math</a></div>
-      <div class="subject"><a href="path_to_physics_pdf">Mind Map and Short Notes Physics</a></div>
+      <div class="subject"><a href="https://www.docfly.com/editor/562ac9721616eac764db/6mjm0qubg9e-b2225da0">Mind Map and Short Notes Math</a></div>
+      <div class="subject"><a href="https://www.docfly.com/editor/562ac9721616eac764db/6mjm0qubg9e-b2225da0">Mind Map and Short Notes Physics</a></div>
     </div>
-    <button class="download-button"><a href="path_to_download_all_class8">Download All</a></button>
+    <button class="download-button"><a href="https://www.docfly.com/editor/562ac9721616eac764db/6mjm0qubg9e-b2225da0">Click Above Box To View </a></button>
   </div>
   <!-- Additional classes can be similarly structured -->
-    <!-- Class 9 -->
+  <!-- Class 9 -->
   <div class="class-box">
     <div class="class-title">Class 9</div>
     <div class="subjects">
       <div class="subject"><a href="path_to_math_pdf">Mind Map and Short Notes Math</a></div>
       <div class="subject"><a href="path_to_physics_pdf">Mind Map and Short Notes Physics</a></div>
     </div>
-    <button class="download-button"><a href="path_to_download_all_class9">Download All</a></button>
+    <button class="download-button"><a href="path_to_download_all_class9">Click Above Box To View</a></button>
   </div>
 
   <!-- Class 10 -->
@@ -121,7 +148,7 @@ body {
       <div class="subject"><a href="path_to_math_pdf">Mind Map and Short Notes Math</a></div>
       <div class="subject"><a href="path_to_physics_pdf">Mind Map and Short Notes Physics</a></div>
     </div>
-    <button class="download-button"><a href="path_to_download_all_class10">Download All</a></button>
+    <button class="download-button"><a href="path_to_download_all_class10">Click Above Box To View</a></button>
   </div>
 
   <!-- Class 11 -->
@@ -131,10 +158,9 @@ body {
       <div class="subject"><a href="path_to_math_pdf">Mind Map and Short Notes Math</a></div>
       <div class="subject"><a href="path_to_physics_pdf">Mind Map and Short Notes Physics</a></div>
     </div>
-    <button class="download-button"><a href="path_to_download_all_class11">Download All</a></button>
+    <button class="download-button"><a href="path_to_download_all_class11">Click Above Box To View</a></button>
   </div>
 
- 
   <!-- Class 12 -->
   <div class="class-box">
     <div class="class-title">Class 12</div>
@@ -142,7 +168,7 @@ body {
       <div class="subject"><a href="path_to_math_pdf">Mind Map and Short Notes Math</a></div>
       <div class="subject"><a href="path_to_physics_pdf">Mind Map and Short Notes Physics</a></div>
     </div>
-    <button class="download-button"><a href="path_to_download_all_class11">Download All</a></button>
+    <button class="download-button"><a href="path_to_download_all_class12">Click Above Box To View</a></button>
   </div>
 </div>
 </body>
