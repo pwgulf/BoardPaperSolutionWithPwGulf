@@ -4,26 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Class Selection</title>
+  <script>
+  window.onload = function() {
+    if (!localStorage.getItem("registered")) {
+      window.location.href = 'index.html';  // Ensure the user is redirected to register if not done so
+    }
+  };
+</script>
 <style>
-  body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
-  .banner { 
-    width: 100%; 
-    height: 150px; 
-    background: url('https://www.pwgulf.com/_next/static/media/pw-gulf-logo.00277f9d.svg') no-repeat center center; 
-    background-size: cover; 
-    color: blue; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-  }
+body { 
+  font-family: Arial, sans-serif; 
+  margin: 0; 
+  padding: 0; 
+  background: #f4f4f4; 
+}
+.banner { 
+  width: 100%; 
+  height: 100px; /* Fixed height */
+  background: url('https://www.pwgulf.com/_next/static/media/pw-gulf-logo.00277f9d.svg') no-repeat center center; 
+  background-size: contain; /* Adjusts the size of the background image to fit within the content box */
+  color: blue; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
   .container {
+    max-width: 1200px; /* Max width for large screens */
+    margin: 0 auto; /* Center the container */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
   }
   .class-box { 
-    width: calc(100% - 40px);
+    width: calc(50% - 40px); /* Responsive width */
+    max-width: 500px; /* Maximum width of boxes */
     margin: 10px;
     background: #07182E;
     padding: 20px;
@@ -63,6 +79,12 @@
   a {
     text-decoration: none;
     color: white;
+  }
+  /* Media query for small devices */
+  @media (max-width: 768px) {
+    .class-box {
+      width: 100%; /* Full width on small screens */
+    }
   }
 </style>
 </head>
@@ -112,6 +134,7 @@
     <button class="download-button"><a href="path_to_download_all_class11">Download All</a></button>
   </div>
 
+ 
   <!-- Class 12 -->
   <div class="class-box">
     <div class="class-title">Class 12</div>
@@ -119,9 +142,8 @@
       <div class="subject"><a href="path_to_math_pdf">Mind Map and Short Notes Math</a></div>
       <div class="subject"><a href="path_to_physics_pdf">Mind Map and Short Notes Physics</a></div>
     </div>
-    <button class="download-button"><a href="path_to_download_all_class12">Download All</a></button>
+    <button class="download-button"><a href="path_to_download_all_class11">Download All</a></button>
   </div>
-
 </div>
 </body>
 </html>
