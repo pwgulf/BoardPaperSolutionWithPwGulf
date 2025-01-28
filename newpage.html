@@ -42,7 +42,7 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background: #f8f9fa; /* Light grey background for a clean look */
+  background: #f8f9fa; /* Light grey background */
   color: #212529;
   overflow-x: hidden;
 }
@@ -57,7 +57,6 @@ body {
   align-items: center;
   position: relative;
   overflow: hidden;
-  animation: fadeIn 2s ease-in-out;
 }
 
 .banner img {
@@ -75,16 +74,6 @@ body {
   }
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 /* Support Info */
 .support-info {
   text-align: center;
@@ -93,19 +82,6 @@ body {
   padding: 15px 0;
   background-color: #e9ecef;
   font-weight: bold;
-  animation: slideInFromTop 1s ease-in-out;
-}
-
-/* Slide-in animation */
-@keyframes slideInFromTop {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 /* Container */
@@ -116,25 +92,24 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 20px;
-  animation: fadeIn 1.5s ease-in-out;
 }
 
 /* Class Box */
 .class-box {
   width: 300px;
   height: 220px;
-  background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Subtle gradient background */
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
   border-radius: 15px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.7); /* 3D effect */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  z-index: 0; /* Ensure it's below links */
 }
 
 .class-box:hover {
@@ -152,6 +127,7 @@ body {
   top: -50%;
   left: -50%;
   animation: rotateBg 4s linear infinite;
+  z-index: -1; /* Place it behind content */
 }
 
 @keyframes rotateBg {
@@ -169,16 +145,12 @@ body {
   color: #007bff;
   font-weight: bold;
   margin-bottom: 15px;
-  transition: color 0.3s ease;
-}
-
-.class-box:hover .class-title {
-  color: #0056b3;
 }
 
 /* Subject Links */
 .subject {
-  width: 100%;
+  display: inline-block;
+  width: 90%;
   padding: 12px;
   margin: 5px 0;
   background: linear-gradient(90deg, #0077B6, #00b4d8);
@@ -186,9 +158,10 @@ body {
   font-weight: bold;
   text-decoration: none;
   border-radius: 8px;
+  text-align: center;
   transition: background 0.3s ease, transform 0.3s ease;
-  display: inline-block;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 1; /* Ensure links are always on top */
 }
 
 .subject:hover {
@@ -209,6 +182,18 @@ body {
   }
 }
 </style>
+</head>
+<body>
+<!-- Banner Section -->
+<div class="banner">
+  <img src="https://www.pwgulf.com/_next/static/media/pw-gulf-logo.00277f9d.svg" alt="PW Gulf Logo">
+</div>
+
+<!-- Support Information -->
+<div class="support-info">
+  <i class="fas fa-envelope"></i> Email us at <a href="mailto:support@pwgulf.com">support@pwgulf.com</a>
+  <i class="fas fa-phone"></i> Call us at +971 564038046
+</div>
 </head>
 <body>
 <!-- Banner Section -->
