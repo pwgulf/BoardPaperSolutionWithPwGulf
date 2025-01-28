@@ -57,12 +57,11 @@ body {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between; /* Adjusts alignment */
   padding: 20px;
 }
 .class-box { 
-  width: calc(50% - 40px);
-  max-width: 500px;
+  flex: 1 1 45%; /* Allows two boxes to fit side by side on desktop */
   margin: 10px;
   background: #07182E;
   padding: 20px;
@@ -70,6 +69,7 @@ body {
   flex-direction: column;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  min-height: 300px; /* Gives a uniform height */
 }
 .class-title {
   font-size: 24px;
@@ -79,24 +79,25 @@ body {
 }
 .subjects {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Stacks the subjects vertically */
 }
 .subject {
-  width: 48%;
   background: #00B4D8;
   padding: 10px;
   border-radius: 10px;
   color: white;
   text-align: center;
+  margin-bottom: 10px; /* Adds spacing between subjects */
+}
+.subject:last-child {
+  margin-bottom: 0; /* Removes bottom margin from the last subject */
 }
 .download-button {
-  padding: 10px 20px;
-  margin-top: 20px;
   background: #0077B6;
   color: white;
-  text-align: center;
-  border: none;
+  padding: 10px 20px;
   border-radius: 10px;
+  text-align: center;
   cursor: pointer;
 }
 a {
@@ -104,19 +105,11 @@ a {
   color: white;
 }
 @media (max-width: 768px) {
-  .class-box {
-    width: 100%;
-    margin: 10px 0;
-  }
-  .subjects {
+  .container {
     flex-direction: column;
   }
-  .subject {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  .subject:last-child {
-    margin-bottom: 0;
+  .class-box {
+    flex: 1 1 100%; /* Each class box takes full width on mobile */
   }
 }
 </style>
