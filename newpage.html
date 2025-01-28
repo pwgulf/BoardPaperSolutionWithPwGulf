@@ -6,17 +6,15 @@
 <title>Class Selection - PWGulf</title>
 <script>
   window.onload = function() {
-    // Check if the user is registered upon loading the page
     if (!localStorage.getItem("registered")) {
-      window.location.href = 'index.html';  // Redirect if not registered
+      window.location.href = 'index.html';
     }
-    // Attach event listeners to all download links
     const downloadLinks = document.querySelectorAll('.class-box a');
     downloadLinks.forEach(link => {
       link.addEventListener('click', function(event) {
         if (!localStorage.getItem("registered")) {
-          event.preventDefault();  // Prevent the link from being followed
-          window.location.href = 'index.html'; // Redirect to registration page
+          event.preventDefault();
+          window.location.href = 'index.html';
         }
       });
     });
@@ -41,13 +39,11 @@ body {
   background-color: #0077B6; 
   animation: pulse 5s infinite;
 }
-
 @keyframes pulse {
   0% { background-color: #0077B6; }
   50% { background-color: #005a86; }
   100% { background-color: #0077B6; }
 }
-
 .support-info {
   text-align: center;
   font-size: 18px;
@@ -56,7 +52,6 @@ body {
   padding: 10px 0;
   font-weight: bold;
 }
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -65,7 +60,6 @@ body {
   justify-content: space-around;
   padding: 20px;
 }
-
 .class-box { 
   width: calc(50% - 40px);
   max-width: 500px;
@@ -77,19 +71,16 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
 .class-title {
   font-size: 24px;
   color: white;
   text-align: center;
   margin-bottom: 20px;
 }
-
 .subjects {
   display: flex;
   justify-content: space-between;
 }
-
 .subject {
   width: 48%;
   background: #00B4D8;
@@ -98,7 +89,6 @@ body {
   color: white;
   text-align: center;
 }
-
 .download-button {
   padding: 10px 20px;
   margin-top: 20px;
@@ -109,15 +99,24 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
-
 a {
   text-decoration: none;
   color: white;
 }
-
 @media (max-width: 768px) {
   .class-box {
     width: 100%;
+    margin: 10px 0;
+  }
+  .subjects {
+    flex-direction: column;
+  }
+  .subject {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .subject:last-child {
+    margin-bottom: 0;
   }
 }
 </style>
@@ -138,42 +137,43 @@ a {
     <div class="subjects">
       <div class="subject"><a href="https://drive.google.com/file/d/1ssqvJfXzG0WcpEL3bcviTL31AwGp8RFD/view">Mind Map and Short Notes Math</a></div>
       <div class="subject"><a href="https://drive.google.com/file/d/1JbeQuwcNmZCFAk2liJyaMUKzdGeP_9JZ/view">Mind Map and Short Notes Science</a></div>
-
-    <!-- Class 8 -->
+    </div>
+  </div>
   <div class="class-box">
     <div class="class-title">Class 8</div>
     <div class="subjects">
       <div class="subject"><a href="https://drive.google.com/file/d/1m-msrahffRfC5Bp3aHgWOSqamWtuDGTs/view">Mind Map and Short Notes Math</a></div>
       <div class="subject"><a href="https://drive.google.com/file/d/1XI_Mmz99UYyUJ8DzLDaN7mbdqvmysJiY/view">Mind Map and Short Notes Science</a></div>
-
-  <!-- Class 9 -->
+    </div>
+  </div>
   <div class="class-box">
     <div class="class-title">Class 9</div>
     <div class="subjects">
       <div class="subject"><a href="https://drive.google.com/file/d/1XTpF2VeUH74r9jcCFBQ9m6tBWW_uIUoL/view">Mind Map and Short Notes Math</a></div>
       <div class="subject"><a href="https://drive.google.com/file/d/1Qf2g1wSzsd_YziibykGHLkcMZhA23OZX/view">Mind Map and Short Notes Science</a></div>
-
-  <!-- Class 10 -->
+    </div>
+  </div>
   <div class="class-box">
     <div class="class-title">Class 10</div>
     <div class="subjects">
       <div class="subject"><a href="https://drive.google.com/file/d/1bbyxBsMhftCSk04HlRsLo0Yfcl5yJl_2/view">Mind Map and Short Notes Math</a></div>
       <div class="subject"><a href="https://drive.google.com/file/d/1vJhT321vk6iu_3lrCsI3AHlCWLokmRhX/view">Mind Map and Short Notes Science</a></div>
-
-  <!-- Class 11 -->
+    </div>
+  </div>
   <div class="class-box">
     <div class="class-title">Class 11</div>
     <div class="subjects">
       <div class="subject"><a href="https://drive.google.com/file/d/1sg-DRHxrzDIlG1OCSwhQJ7bdymdGjz6O/view">Mind Map and Short Notes Math</a></div>
       <div class="subject"><a href="https://drive.google.com/file/d/1ZGKEMxC_TD6yHq0efZOKdclOhu8jiyBF/view">Mind Map and Short Notes Science</a></div>
-
-  <!-- Class 12 -->
+    </div>
+  </div>
   <div class="class-box">
     <div class="class-title">Class 12</div>
     <div class="subjects">
       <div class="subject"><a href="https://drive.google.com/file/d/1tMPC5h4rwyKXcGeN8sk3qU4UL-K8gTDq/view">Mind Map and Short Notes Math</a></div>
       <div class="subject"><a href="https://drive.google.com/file/d/1UNGDzYsu8ju1VxeHivwSeyocDg_zmBF7/view">Mind Map and Short Notes Science</a></div>
-
+    </div>
+  </div>
 </div>
 </body>
 </html>
