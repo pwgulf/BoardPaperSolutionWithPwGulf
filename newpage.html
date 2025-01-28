@@ -41,7 +41,7 @@ body {
   font-family: Arial, sans-serif; 
   margin: 0; 
   padding: 0; 
-  background: #283747; /* Dark slate background for contrast */
+  background: #243137; /* Dark slate background for contrast */
   color: white; /* Sets default text color to white for all text */
 }
 .banner { 
@@ -64,21 +64,27 @@ body {
 }
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Adjusts alignment */
-  padding: 20px;
+  justify-content: space-between;
 }
 .class-box { 
-  flex: 1 1 48%; /* Allows two boxes to fit side by side on desktop */
-  margin: 10px;
-  background: #212F3D; /* Darker background for class boxes */
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+  width: 300px;
+  height: 200px;
+  background: #2c3e50; /* Dark background */
+  position: relative;
+  display: grid;
+  place-content: center;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  margin: 10px;
+}
+.class-box:hover {
+  border-radius: 0;
+  transform: scale(1.1);
+  border: 2px solid #bd9f67;
 }
 .class-title {
   font-size: 24px;
@@ -91,23 +97,13 @@ body {
   justify-content: space-between;
 }
 .subject {
-  flex: 1; /* Makes each subject box take full available space */
-  background: #3498DB; /* Bright blue background for subjects */
+  flex: 1;
+  background: #3498DB;
   padding: 15px;
   border-radius: 10px;
   color: white;
   text-align: center;
-  margin: 0 10px; /* Provides spacing between subject boxes */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
-}
-.subject:hover {
-  background: #2980B9; /* Darker blue on hover */
-}
-.header-text {
-  text-align: center;
-  padding: 20px 0;
-  font-size: 22px;
-  font-weight: bold;
+  margin: 0 10px;
 }
 @media (max-width: 768px) {
   .container {
@@ -115,12 +111,6 @@ body {
   }
   .class-box {
     flex: 1 1 100%; /* Each class box takes full width on mobile */
-  }
-  .subjects {
-    flex-direction: column;
-  }
-  .subject {
-    margin: 10px 0; /* Adjust margin for vertical layout */
   }
 }
 </style>
@@ -133,7 +123,7 @@ body {
   <i class="fas fa-envelope"></i> Email us at <a href="mailto:support@pwgulf.com">support@pwgulf.com</a>
   <i class="fas fa-phone"></i> Call us at +971 564038046
 </div>
-<div class="container">Ace Your Exam with PWGulf Master Teacher Suggested Best Content Before Exam</div>
+<div class="container">Ace your exams with the best quality study material</div>
 <div class="container">
   <!-- Adjust the layout for each class similarly -->
   <div class="class-box">
