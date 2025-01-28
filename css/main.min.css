@@ -30,8 +30,6 @@ body {
 
 .card-heading {
     padding: 20px;
-    background-color: transparent; /* Removing background color */
-    color: #fff; /* Ensuring the text is still visible, set to white if necessary */
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: center;
