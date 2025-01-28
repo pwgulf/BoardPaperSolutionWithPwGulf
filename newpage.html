@@ -41,7 +41,8 @@ body {
   font-family: Arial, sans-serif; 
   margin: 0; 
   padding: 0; 
-  background: #f4f4f4; 
+  background: #283747; /* Dark slate background for contrast */
+  color: white; /* Sets default text color to white for all text */
 }
 .banner { 
   width: 100%; 
@@ -52,12 +53,6 @@ body {
   justify-content: center; 
   align-items: center; 
   background-color: #0077B6; 
-  animation: pulse 5s infinite;
-}
-@keyframes pulse {
-  0% { background-color: #0077B6; }
-  50% { background-color: #005a86; }
-  100% { background-color: #0077B6; }
 }
 .support-info {
   text-align: center;
@@ -72,22 +67,22 @@ body {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; 
+  justify-content: space-between; /* Adjusts alignment */
   padding: 20px;
 }
 .class-box { 
-  flex: 1 1 48%; 
+  flex: 1 1 48%; /* Allows two boxes to fit side by side on desktop */
   margin: 10px;
-  background: #07182E;
+  background: #212F3D; /* Darker background for class boxes */
   padding: 20px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 .class-title {
   font-size: 24px;
-  color: white;
+  color: #5DADE2; /* Light blue for class titles */
   text-align: center;
   margin-bottom: 20px;
 }
@@ -96,29 +91,36 @@ body {
   justify-content: space-between;
 }
 .subject {
-  width: 48%; 
-  background: #00B4D8;
-  padding: 10px;
+  flex: 1; /* Makes each subject box take full available space */
+  background: #3498DB; /* Bright blue background for subjects */
+  padding: 15px;
   border-radius: 10px;
   color: white;
   text-align: center;
-  margin-bottom: 10px; 
+  margin: 0 10px; /* Provides spacing between subject boxes */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
-.subject:last-child {
-  margin-bottom: 0; 
+.subject:hover {
+  background: #2980B9; /* Darker blue on hover */
+}
+.header-text {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 22px;
+  font-weight: bold;
 }
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
   .class-box {
-    flex: 1 1 100%; 
+    flex: 1 1 100%; /* Each class box takes full width on mobile */
   }
   .subjects {
     flex-direction: column;
   }
   .subject {
-    width: 100%;
+    margin: 10px 0; /* Adjust margin for vertical layout */
   }
 }
 </style>
