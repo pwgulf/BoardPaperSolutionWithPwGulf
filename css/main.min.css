@@ -10,6 +10,7 @@ body {
 .page-wrapper {
     padding-top: 45px;
     padding-bottom: 50px;
+    background-color: #2c3e50; /* Dark background to match the PW Gulf logo area */
 }
 
 .wrapper {
@@ -29,7 +30,8 @@ body {
 
 .card-heading {
     padding: 20px;
-    background-color: #e9ecef;
+    background-color: #34495e; /* Matching darker shade for header */
+    color: #fff; /* White text for better visibility */
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: center;
@@ -56,7 +58,7 @@ select.input--style-5 {
 
 input.input--style-5:focus,
 select.input--style-5:focus {
-    border-color: #5cb85c;
+    border-color: #3498db;
     background-color: #fff;
     outline: none;
 }
@@ -74,13 +76,13 @@ select.input--style-5:focus {
     font-size: 16px;
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    background: linear-gradient(45deg, #3498db, #2ecc71);
     cursor: pointer;
     transition: background 0.3s;
 }
 
 .btn--radius-2:hover {
-    background: linear-gradient(45deg, #2575fc, #6a11cb);
+    background: linear-gradient(45deg, #2ecc71, #3498db);
 }
 
 /* Responsive Adjustments */
@@ -94,7 +96,17 @@ select.input--style-5:focus {
     }
 }
 
-/* Enhancements for select elements */
+/* Enhancements for radio buttons alignment */
+.radio-container {
+    display: inline-block; /* Adjust to inline-block for horizontal layout */
+    margin-right: 30px; /* Spacing between Yes and No options */
+}
+
+.radio-container input[type="radio"] {
+    margin-right: 5px; /* Spacing before the label */
+}
+
+/* Adjustments for select elements */
 .rs-select2 .select-dropdown {
     border-radius: 5px;
 }
