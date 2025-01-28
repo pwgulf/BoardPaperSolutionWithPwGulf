@@ -19,6 +19,21 @@
       });
     });
   };
+<script>
+  window.onload = function() {
+    if (!localStorage.getItem("registered")) {
+      window.location.href = 'index.html';
+    }
+    const downloadLinks = document.querySelectorAll('.class-box a');
+    downloadLinks.forEach(link => {
+      link.addEventListener('click', function(event) {
+        if (!localStorage.getItem("registered")) {
+          event.preventDefault();
+          window.location.href = 'index.html';
+        }
+      });
+    });
+  };
 </script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 <style>
@@ -57,11 +72,11 @@ body {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Adjusts alignment */
+  justify-content: space-between; 
   padding: 20px;
 }
 .class-box { 
-  flex: 1 1 45%; /* Allows two boxes to fit side by side on desktop */
+  flex: 1 1 48%; 
   margin: 10px;
   background: #07182E;
   padding: 20px;
@@ -69,7 +84,6 @@ body {
   flex-direction: column;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  min-height: 300px; /* Gives a uniform height */
 }
 .class-title {
   font-size: 24px;
@@ -79,37 +93,32 @@ body {
 }
 .subjects {
   display: flex;
-  flex-direction: column; /* Stacks the subjects vertically */
+  justify-content: space-between;
 }
 .subject {
+  width: 48%; 
   background: #00B4D8;
   padding: 10px;
   border-radius: 10px;
   color: white;
   text-align: center;
-  margin-bottom: 10px; /* Adds spacing between subjects */
+  margin-bottom: 10px; 
 }
 .subject:last-child {
-  margin-bottom: 0; /* Removes bottom margin from the last subject */
-}
-.download-button {
-  background: #0077B6;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  text-align: center;
-  cursor: pointer;
-}
-a {
-  text-decoration: none;
-  color: white;
+  margin-bottom: 0; 
 }
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
   .class-box {
-    flex: 1 1 100%; /* Each class box takes full width on mobile */
+    flex: 1 1 100%; 
+  }
+  .subjects {
+    flex-direction: column;
+  }
+  .subject {
+    width: 100%;
   }
 }
 </style>
