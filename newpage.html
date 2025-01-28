@@ -37,110 +37,45 @@
 </script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 <style>
+/* General Body Styling */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #f8f9fa, #e9ecef); /* Light gradient background for modern appeal */
+  background: #f8f9fa; /* Light grey background for a clean look */
   color: #212529;
+  overflow-x: hidden;
 }
 
 /* Banner Section */
 .banner {
   width: 100%;
-  height: 180px;
-  background: linear-gradient(to right, #0077b6, #00b4d8); /* Gradient banner background */
+  height: 150px;
+  background: #0077B6;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  color: white;
-  animation: fadeIn 1.5s ease-in-out; /* Smooth fade-in animation */
+  overflow: hidden;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .banner img {
-  max-height: 120px;
-  animation: bounce 2s infinite; /* Subtle bounce effect for the logo */
+  height: 100px;
+  animation: float 3s infinite ease-in-out;
 }
 
-/* Support Info Section */
-.support-info {
-  text-align: center;
-  font-size: 18px;
-  color: #007bff;
-  padding: 15px 0;
-  background-color: #ffffff; /* White background for contrast */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  font-weight: bold;
-}
-
-/* Main Container */
-.container {
-  max-width: 1200px;
-  margin: 20px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; /* Center items with spacing */
-  gap: 20px; /* Adds consistent spacing */
-}
-
-/* Class Boxes */
-.class-box {
-  width: 280px;
-  height: 200px;
-  background: #ffffff; /* Clean white background */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Depth effect */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.class-box:hover {
-  transform: translateY(-10px); /* Lift effect */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Class Title */
-.class-title {
-  font-size: 22px;
-  color: #0077b6; /* Theme blue */
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-/* Subject Buttons */
-.subject {
-  width: 100%;
-  padding: 10px;
-  background-color: #0077b6;
-  color: white;
-  border-radius: 5px;
-  text-align: center;
-  margin-bottom: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.subject:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-  .class-box {
-    width: 90%; /* Full width on smaller devices */
+/* Floating animation for logo */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
   }
-  .container {
-    flex-direction: column; /* Stack boxes vertically */
-    align-items: center;
+  50% {
+    transform: translateY(-10px);
   }
 }
 
-/* Animations */
+/* Fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -150,12 +85,127 @@ body {
   }
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
+/* Support Info */
+.support-info {
+  text-align: center;
+  font-size: 18px;
+  color: #007bff;
+  padding: 15px 0;
+  background-color: #e9ecef;
+  font-weight: bold;
+  animation: slideInFromTop 1s ease-in-out;
+}
+
+/* Slide-in animation */
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
   }
-  50% {
-    transform: translateY(-10px); /* Slight upward movement */
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Class Box */
+.class-box {
+  width: 300px;
+  height: 220px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Subtle gradient background */
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.7); /* 3D effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.class-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), -10px -10px 20px rgba(255, 255, 255, 0.7);
+}
+
+.class-box::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: rgba(0, 123, 255, 0.1);
+  transform: rotate(45deg);
+  top: -50%;
+  left: -50%;
+  animation: rotateBg 4s linear infinite;
+}
+
+@keyframes rotateBg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Class Title */
+.class-title {
+  font-size: 24px;
+  color: #007bff;
+  font-weight: bold;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.class-box:hover .class-title {
+  color: #0056b3;
+}
+
+/* Subject Links */
+.subject {
+  width: 100%;
+  padding: 12px;
+  margin: 5px 0;
+  background: linear-gradient(90deg, #0077B6, #00b4d8);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.subject:hover {
+  background: linear-gradient(90deg, #0056b3, #0077B6);
+  transform: scale(1.05);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .class-box {
+    width: 90%;
+    margin: 10px auto;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
   }
 }
 </style>
